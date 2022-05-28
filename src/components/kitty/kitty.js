@@ -39,7 +39,7 @@ function Kitty({ kitty }) {
         setHovered(false);
       }}
     >
-      <img alt="cat" src={kitty.url} width="255" height="255" />
+      <img alt="cat" src={kitty.url} width="225" height="225" />
       {hovered ? (
         liked ? (
           <Unlike id={kitty.id} setLiked={setLiked} />
