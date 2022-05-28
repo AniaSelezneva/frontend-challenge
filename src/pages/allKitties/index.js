@@ -15,7 +15,7 @@ function AllKitties() {
       const bottomElement = entries[0];
       // If bottom element is visible...
       if (bottomElement.isIntersecting) {
-        //setPage((prevPage) => prevPage + 1);
+        setPage((prevPage) => prevPage + 1);
       }
     })
   );
