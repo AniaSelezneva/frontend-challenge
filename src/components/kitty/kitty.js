@@ -5,6 +5,7 @@ import styles from "./styles.module.scss";
 
 function Kitty({ kitty }) {
   const [liked, setLiked] = useState(false);
+  const [hovered, setHovered] = useState(undefined);
 
   // Check if this image has been liked
   // Return bool
@@ -29,13 +30,23 @@ function Kitty({ kitty }) {
   }, []);
 
   return (
-    <li className={styles.container}>
+    <li
+      className={styles.container}
+      onMouseEnter={() => {
+        setHovered(true);
+      }}
+      onMouseLeave={() => {
+        setHovered(false);
+      }}
+    >
       <img alt="cat" src={kitty.url} width="255" height="255" />
-      {liked ? (
-        <Unlike id={kitty.id} setLiked={setLiked} />
-      ) : (
-        <Like id={kitty.id} setLiked={setLiked} />
-      )}
+      {hovered ? (
+        liked ? (
+          <Unlike id={kitty.id} setLiked={setLiked} />
+        ) : (
+          <Like id={kitty.id} setLiked={setLiked} />
+        )
+      ) : null}
     </li>
   );
 }

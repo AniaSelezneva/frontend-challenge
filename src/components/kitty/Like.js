@@ -39,7 +39,7 @@ function Like({ id, setLiked }) {
       width="40"
       height="37"
       viewBox="0 0 40 37"
-      fill="purple"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
