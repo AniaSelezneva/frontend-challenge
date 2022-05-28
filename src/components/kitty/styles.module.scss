@@ -1,0 +1,26 @@
+.container {
+  position: relative;
+  height: 255px;
+  width: 255px;
+
+  & > img {
+    object-fit: cover;
+  }
+
+  & > svg {
+    position: absolute;
+    bottom: 8.33%;
+    right: 8.33%;
+    cursor: pointer;
+  }
+}
+
+.container:hover {
+  transform: scale(1.07);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24);
+  transition-duration: 0.5s;
+}
+.container:not(:hover) {
+  transform: scale(1);
+  transition-duration: 0.5s;
+}

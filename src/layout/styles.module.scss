@@ -1,0 +1,46 @@
+$header_background_color: #2196f3;
+$active_background_color: #1e88e5;
+
+$active_color: #ffffff;
+$inactive_color: rgba(255, 255, 255, 0.7);
+
+.main {
+  & > .header {
+    background: $header_background_color;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding-left: 3rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24);
+
+    & > ul {
+      display: flex;
+      height: 100%;
+
+      & > li {
+        width: 120px;
+
+        & > a {
+          color: $inactive_color;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 21px;
+          letter-spacing: 0.25px;
+
+          height: 100%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        // Active link
+        & > .active_link {
+          background: $active_background_color;
+          color: $active_color;
+        }
+      }
+    }
+  }
+}
