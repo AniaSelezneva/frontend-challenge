@@ -26,25 +26,27 @@ function FavKitties() {
     const promises = [];
     const favUrls = getFavs();
 
-    favUrls.forEach((url) => {
-      const getBody = async () => {
-        const response = await fetch(url, {
-          headers: {
-            "x-api-key": process.env.REACT_APP_KEY,
-          },
-        });
-        return response.json();
+    if (favUrls) {
+      favUrls.forEach((url) => {
+        const getBody = async () => {
+          const response = await fetch(url, {
+            headers: {
+              "x-api-key": process.env.REACT_APP_KEY,
+            },
+          });
+          return response.json();
+        };
+
+        promises.push(getBody());
+      });
+
+      const getFavKitties = async () => {
+        const kitties = await Promise.all(promises);
+        setKitties(kitties);
       };
 
-      promises.push(getBody());
-    });
-
-    const getFavKitties = async () => {
-      const kitties = await Promise.all(promises);
-      setKitties(kitties);
-    };
-
-    getFavKitties();
+      getFavKitties();
+    }
   }, []);
 
   return (
