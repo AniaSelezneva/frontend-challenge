@@ -51,12 +51,14 @@ function FavKitties() {
 
   return (
     <div className={styles.container}>
-      {kitties && (
+      {kitties ? (
         <ul>
           {kitties.map((kitty, idx) => (
             <Kitty key={idx} kitty={kitty} />
           ))}
         </ul>
+      ) : (
+        <p>Пожалуйста, добавьте любимых котиков</p>
       )}
     </div>
   );
