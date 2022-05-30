@@ -33,14 +33,9 @@ function Kitty({ kitty }) {
     <li
       className={styles.container}
       onMouseEnter={() => {
-        console.log("enter");
         setHovered(true);
       }}
       onMouseLeave={() => {
-        setHovered(false);
-      }}
-      onTouchEnd={() => {
-        console.log("left");
         setHovered(false);
       }}
     >
